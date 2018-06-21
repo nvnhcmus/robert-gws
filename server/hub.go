@@ -96,6 +96,11 @@ func (h *Hub) run() {
 			//var rm_counter int32
 			counter=0
 			//rm_counter=0
+			// submit one or more jobs to pool
+			// how many jobs we should wait
+
+			len_clients := len(h.clients)
+			pool.WaitCount(len_clients)
 
 			for client := range h.clients{
 
